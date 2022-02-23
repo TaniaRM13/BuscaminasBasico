@@ -12,6 +12,7 @@ public class BuscaminasBasico {
     public static void main(String[] args) {
         Campo campito = new Campo();
         campito.crearCampo();
+        campito.randomMinas();
+        campito.imprimir();
     }
-    
 }

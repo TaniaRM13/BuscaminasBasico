@@ -9,7 +9,8 @@ public class Minas {
     private int conteoBombas;
 
     public Minas() {
-        
+        this.bomba = false;
+        this.conteoBombas = 0;
     }
 
     public void setBomba(boolean bomba) {

@@ -5,35 +5,46 @@ package buscaminasbasico;
  * @author Tania
  */
 public class Campo {
-    private Minas campo[][];
+    private Minas campo1[][];
 
     public Campo() {
+
     }
     
     public void crearCampo(){
-        Minas [][] campo1 = new Minas[4][4];
+        campo1 = new Minas[4][4];
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 campo1[i][j] = new Minas();
-                campo1[i][j].setBomba(false);
-                campo1[i][j].setConteoBombas(0);
+            }
+        }
+    }
+    
+    public void randomMinas(){
+        this.campo1 = campo1;
+        int x,y;
+        for (int i = 0; i < 3; i++) {
+            x = 0;
+            x = (int) (3* Math.random());
+            y = 0;
+            y = (int) (3*Math.random());
+            if(campo1[x][y].isBomba()){
+                i--;
+            }else{
+                campo1[x][y].setBomba(true);
+                campo1[x][y].setConteoBombas(1);
+            }
+        }
+    }
+    
+    public void imprimir(){
+        this.campo1 = campo1;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 System.out.print("["+campo1[i][j].getConteoBombas()+"]");
             }
             System.out.println("");
         }
-        //this.random();
     }
-    
-    public Minas[][] random(){
-        Minas [][] campo1 = new Minas[4][4];
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                campo1[i][j] = new Minas();
-                campo1[i][j].setBomba(false);
-                campo1[i][j].setConteoBombas(0);
-            }
-        }
-        return campo1;
-    }
-    
+
 }
