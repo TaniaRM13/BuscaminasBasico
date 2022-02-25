@@ -13,6 +13,7 @@ public class BuscaminasBasico {
         Campo campito = new Campo();
         campito.crearCampo();
         campito.randomMinas();
+        campito.recorrerArray();
         campito.imprimir();
     }
 }

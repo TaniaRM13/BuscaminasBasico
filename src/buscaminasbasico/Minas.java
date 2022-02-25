@@ -10,7 +10,7 @@ public class Minas {
 
     public Minas() {
         this.bomba = false;
-        this.conteoBombas = 0;
+        //this.conteoBombas = 0;
     }
 
     public void setBomba(boolean bomba) {
