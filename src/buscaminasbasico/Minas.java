@@ -1,5 +1,7 @@
 package buscaminasbasico;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Tania
@@ -7,10 +9,11 @@ package buscaminasbasico;
 public class Minas {
     private boolean bomba;
     private int conteoBombas;
+    private JButton boton;
 
-    public Minas() {
+    public Minas(JButton boton) {
         this.bomba = false;
-        //this.conteoBombas = 0;
+        this.boton = boton;
     }
 
     public void setBomba(boolean bomba) {

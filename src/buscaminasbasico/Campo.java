@@ -1,32 +1,35 @@
 package buscaminasbasico;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tania
  */
-public class Campo {
+public class Campo extends JPanel{
     private Minas campo1[][];
 
     public Campo() {
 
     }
     
-    public void crearCampo(){
-        campo1 = new Minas[4][4];
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                campo1[i][j] = new Minas();
+    public void crearCampo(JPanel panel){
+        campo1 = new Minas[10][10];
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                campo1[i][j] = new Minas((JButton) panel.add(new JButton("")));
             }
         }
     }
     
     public void randomMinas(){
         int x,y;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10; i++) {
             x = 0;
-            x = (int) (4* Math.random());
+            x = (int) (10* Math.random());
             y = 0;
-            y = (int) (4*Math.random());
+            y = (int) (10*Math.random());
             if(campo1[x][y].isBomba()){
                 i--;
             }else{
